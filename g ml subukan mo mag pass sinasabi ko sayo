@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Legends Invite</title>
+</head>
+<body>
+
+    <h2>hi kuya,</h2>
+    <p>g ka ba ml? Hahahah?</p>
+
+    <p style="color: red;">Reminder: Please don't click 'View Responses' kasi baka mawala tas di ko makita kung ano sagot mo.</p>
+    
+    <button onclick="inviteCrush()">g!</button>
+    <button onclick="rejectCrush()">pass.</button>
+    <button onclick="viewResponses()">View Responses</button>
+
+    <script>
+        var responses = [];  // Array to store responses
+
+        function inviteCrush() {
+            var response = prompt("tamang desisyon!");
+
+            if (response !== null) {  // Check if the user didn't click Cancel
+                if (response.toLowerCase() === "g") {
+                    alert("rei's response: g!");
+                } else if (response.toLowerCase() === "pass") {
+                    alert("rei's response: Pass!");
+                } else {
+                    alert("rei's response: " + response);
+                }
+
+                responses.push(response);  // Store the response in the array
+                // You can add more functionality here like sending a message or redirecting to the game.
+            }
+        }
+
+        function rejectCrush() {
+            responses.push("Reject");  // Store the rejection response
+            alert("ma ls ka sana ");
+            // You can add more actions for rejection here.
+        }
+
+        function viewResponses() {
+            alert(responses.length > 0 ? "All Responses:\n" + responses.join('\n') : "No responses yet.");
+        }
+    </script>
+
+</body>
+</html>
